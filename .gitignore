@@ -3,3 +3,4 @@
 __pycache__
 /log/logs/*
 /config/mail_config.py
+/config/wechat_config.py

@@ -3,12 +3,13 @@ from selenium import webdriver
 from log.logger import logger as log
 from src.mail import send_mail
 from config.mail_config import mail_config
+from src.wechat_msg import send_msg
 
 browser = None
 
 def check_shop(url, keywords):
     browser.get(url)
-    time.sleep(5)
+    time.sleep(3)
     find_flag = False
     for keyword in keywords:
         if keyword in browser.page_source:
@@ -18,12 +19,12 @@ def check_shop(url, keywords):
         log.warning("FIND!!!")
         log.warning(url)
         log.warning(keywords)
-        send_mail(
-            "发现口罩有货!!",
-            url,
-            mail_config.get("to")
-        )
-
+        # send_mail(
+        #     "发现口罩有货!!",
+        #     url,
+        #     mail_config.get("to")
+        # )
+        send_msg("口罩有货!   "+url)
 
 
 def check_all_shops():
