@@ -24,7 +24,7 @@ def check_shop(url, keywords):
         #     url,
         #     mail_config.get("to")
         # )
-        send_msg("口罩有货!   "+url)
+        send_msg(url)
 
 
 def check_all_shops():
