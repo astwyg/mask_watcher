@@ -1,5 +1,6 @@
 import os, time, json
 from selenium import webdriver
+from selenium.webdriver import ChromeOptions
 from log.logger import logger as log
 from src.mail import send_mail
 from config.mail_config import mail_config
@@ -38,7 +39,9 @@ def check_all_shops():
 
 
 if __name__ == "__main__":
+    option = ChromeOptions()
+    option.add_experimental_option('excludeSwitches', ['enable-automation'])
+    browser = webdriver.Chrome(os.path.join(os.path.dirname(__file__), "chromedriver.exe"), options=option)
     while True:
-        browser = webdriver.Chrome(os.path.join(os.path.dirname(__file__), "chromedriver.exe"))
         check_all_shops()
-        browser.quit()
+    browser.quit()

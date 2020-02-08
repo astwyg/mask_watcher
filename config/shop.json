@@ -139,7 +139,7 @@
 		]
 	},{
 		"name":"tmall",
-		"key_word":"已下架",
+		"key_word":"已下架,此商品不支持在当前区域销售",
 		"shop":[
 			"https://detail.tmall.com/item.htm?id=537783105938",
 			"https://detail.tmall.com/item.htm?id=526256013584",
